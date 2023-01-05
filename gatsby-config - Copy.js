@@ -24,11 +24,11 @@ module.exports = {
         mediumAccount: 'carbondesign',
         repository: {
           baseUrl:
-            'https://github.com/ibm-bp-tech/Turbo-1-Day-Partner-Workshop',
+            'https://github.com/ibm-bp-tech/Instana-HalfDay-Partner-Workshop',
           subDirectory: '/',
         },
       },
     },
   ],
-  pathPrefix: "/Turbo-1-Day-Partner-Workshop",
+  pathPrefix: "/Instana-HalfDay-Partner-Workshop",
 };

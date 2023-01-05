@@ -5,11 +5,11 @@ import { calloutLink } from './Homepage.module.scss';
 
 import Carbon from './logo.png';
 
-const FirstLeftText = () => <p>IBM Turbonomic ARM </p>;
+const FirstLeftText = () => <p>IBM Observability by Instana</p>;
 
 const FirstRightText = () => (
   <p>
-    Learn about IBM's Turbonomic Application Resource Management. This site contains example labs, tutorials, and client instructions.
+    Learn about IBM's Instana. This site contains example labs, tutorials, and client instructions.
   </p>
 );
 

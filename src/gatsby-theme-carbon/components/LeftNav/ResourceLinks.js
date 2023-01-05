@@ -3,13 +3,13 @@ import ResourceLinks from 'gatsby-theme-carbon/src/components/LeftNav/ResourceLi
 
 const links = [
   {
-    title: 'Instana Site',
-    href: 'https://www.ibm.com/cloud/instana',
+    title: 'Turbonomic Site',
+    href: 'https://www.ibm.com/products/turbonomic',
   },
 
   {
-    title: 'Instana Documentation',
-    href: 'https://www.ibm.com/docs/en/obi/current',
+    title: 'Turbonomic Documentation',
+    href: 'https://www.ibm.com/docs/en/SSFV9Z_8.6.0/pdfs/IBMTurbonomic_8.6.0.pdf',
   },
  {
     title: 'IBM AIOps Site',

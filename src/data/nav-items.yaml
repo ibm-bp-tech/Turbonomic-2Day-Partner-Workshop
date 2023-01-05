@@ -1,29 +1,19 @@
-- title: Introduction to Instana
+- title: Introduction to Turbonomic
   pages:
     - path: /SalesEnablement/sales
 - title: Technical Labs
   pages:
-    - title: Lab 1 - Agent Installation
-      path: /Labs/Lab1
-    - title: Lab 2 - Agent Troubleshooting
+    - title: Introduction
+      path: /Labs/Introduction
+    - title: Lab Environment
+      path: /Labs/env
+    - title: Lab 1 - Apps & Infra dependencies
+      path: /Labs/Lab1      
+    - title: Lab 2 - RobotShop App
       path: /Labs/Lab2
-    - title: Lab 3 - Agent Configuration
+    - title: Lab 3 - Optimization Recommendations
       path: /Labs/Lab3
-    - title: Lab 4 - Robot Shop
+    - title: Lab 4 - Automating Actions
       path: /Labs/Lab4
-    - title: Lab 5 - Dynamic Focus Query
-      path: /Labs/Lab5
-    - title: Lab 6 - Application Perspectives
-      path: /Labs/Lab6
-    - title: Lab 7 - Service Mapping
-      path: /Labs/Lab7
-    - title: Lab 8 - Endpoint Mapping
-      path: /Labs/Lab8
-    - title: Lab 9 - Custom Events
-      path: /Labs/Lab9
-    - title: Reference - vi Editor
-      path: /Labs/vi
-
-- title: Instructor Setup Instructions
-  pages:
-    - path: /SetupInstructions/setup
+    - title: Summary
+      path: /Labs/Summary

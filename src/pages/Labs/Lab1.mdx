@@ -1,61 +1,69 @@
 ---
-title: Lab 1 - Agent Installation
+export const Title = () => (
+  <span>
+    Lab 1 - Global view of the applications and their infrastructure dependencies <br />
+  </span>
+);
 ---
-## Step 1: 
 
-All Students should have received an e-mail inviting them to join the Instana partner tenant. 
+## 1.1 - Examine the global supply chain
+Turbonomic requires configuration and operational performance data to make resource optimization recommendations. The more data the better.
 
-![Large blocky illustration](images/1.1.png)
+The RobotShop application is being observed by Instana. Turbonomic ingests data from Instana and builds a common data model to stitch together a graphical view of the application and its resource dependencies. In the Turbonomic nomenclature, this is called the “supply chain.”
 
-You will have access to both the Demo and Sandbox Instana. 
+The global supply chain models the dynamic relationship of the managed application and its dependent infrastructure layers.
 
-For the Labs we will be accessing the Sandbox instance. 
+#### Step 1.1.0
+- Log in to the Turbonomic instance and click the On button in the upper left corner.
+##### NOTE: The next six steps will refer to the graphic below.
 
-Launch the Sandbox Instana Portal from the browser: https://sandbox-partner.instana.io 
+![Lab1](images/1.1.0.jpg)
 
-Your screen will look like this: 
+#### Step 1.1.1
 
-![Large blocky illustration](images/1.2.png)
+- Hover the cursor over the Business Application entity (1).
+- The Business Applications entity shows the business applications of which Turbonomic is aware.
 
-## Step 2:
+#### Step 1.1.2
+- Hover the cursor over the Business Trans#### Step entity (2).
+- The Business Trans#### Step entity shows logical business functions that an end-user would execute (such as a purchase or add-to-cart). Business applications are composed of these business transactions.
 
-![Large blocky illustration](images/1.3.png)
+#### Step 1.1.3
+- Hover the cursor over the Service entity (3).
+- A service is basically a REST endpoint, and transactions use the services.
 
-## Step 3:
+#### Step 1.1.4
+- Hover the cursor over the Application Component entity (4).
+- Services are hosted and executed in an application component, such as a Java virtual machine (JVM).
 
-![Large blocky illustration](images/1.4.png)
+#### Step 1.1.5
+- Hover the cursor over the Container entity (5).
+- Application components run on a container platform like Kubernetes.
 
-## Step 4:
+#### Step 1.1.6
+- Hover the cursor over the Virtual Machine entity (6).
+- Application platforms are hosted in virtualized environments like vSphere.
 
-SSH into the training host that has been provided as “ubuntu” (your instructor will provide a host IP address and password).
+## 1.2 - Explore the top business applications view
 
-```
-ssh ubuntu@<IP address>
-```
+Turbonomic displays the applications in order of risk.
 
-Paste the CURL statement that you copied in the last step into your terminal window and hit enter. 
-You should see a screen that will look similar to the one below. Please enter “y” and hit enter. This will  start the installation process.
+In each of the entities, such as the Business Application entity, the colors that make up the circle reflect the current health of the entities. “Green” is healthy, “yellow” represents efficiency recommendations, and “red” represents performance recommendations..
 
-![Large blocky illustration](images/1.5.png)
+#### Step 1.2.1
+- Click the Business Application entity.
 
-## Step 5:
+![Lab1](images/1.2.1.jpg)
 
-Once the installation is complete, we need to validate that our work has been successful. 
-To accomplish this, we will want to navigate to the Infrastructure page of the Instana UI. 
+We see that there’s an increase in the average response time.
+The current status indicates that there are some critical performance issues as well as some areas to improve efficiency.
+The Actions button enables you to take the recommended actions directly from Turbonomic.
 
-Note: You may need to refresh and give it a minute. 
+##### NOTE: We won’t click the Actions button at this time.
 
-![Large blocky illustration](images/1.6.png)
+#### Step 1.2.2
+- Click the X in the upper right corner to close the Application: Business Application page.
+![Lab1](images/1.2.2.jpg)
 
-When in the infrastructure map section, we will see an open text field. 
-We are using DFQ or “Dynamic Focus Query” to filter the content on the screen. 
 
-In this scenario, we will use DFQ to filter on our host using:
 
-```
-entity.host.name:<your host name> 
-```
-
-![Large blocky illustration](images/1.7.png)
-
-If you see your host in the map, you have validated that the installation was successful. 

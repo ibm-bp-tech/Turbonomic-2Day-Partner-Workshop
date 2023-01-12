@@ -1,0 +1,19 @@
+- title: Introduction to Turbonomic
+  pages:
+    - path: /SalesEnablement/sales
+- title: Technical Labs
+  pages:
+    - title: Introduction
+      path: /Labs/Introduction
+    - title: Lab Environment
+      path: /Labs/env
+    - title: Lab 1 - Apps & Infra dependencies
+      path: /Labs/Lab1      
+    - title: Lab 2 - RobotShop App
+      path: /Labs/Lab2
+    - title: Lab 3 - Optimization Recommendations
+      path: /Labs/Lab3
+    - title: Lab 4 - Automating Actions
+      path: /Labs/Lab4
+    - title: Summary
+      path: /Labs/Summary

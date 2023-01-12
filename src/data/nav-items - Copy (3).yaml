@@ -3,7 +3,7 @@
     - path: /SalesEnablement/sales
 - title: Technical Labs
   pages:
-    - title: Introduction - ARM
+    - title: Introduction
       path: /Labs/Introduction
     - title: Lab Environment
       path: /Labs/env
@@ -15,10 +15,8 @@
       path: /Labs/Lab3
     - title: Lab 4 - Automating Actions
       path: /Labs/Lab4
-    - title: Summary - ARM
+    - title: Summary
       path: /Labs/Summary
-    - title: 
-      path: /Labs/space
     - title: Introduction FinOps
       path: /Labs/Introduction-finops
     - title: Lab Environment

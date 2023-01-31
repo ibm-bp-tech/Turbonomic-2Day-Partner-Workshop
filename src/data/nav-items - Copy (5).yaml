@@ -1,14 +1,11 @@
-- title: Agenda
-  pages:
-    - path: /Agenda/agenda
 - title: Introduction to Turbonomic
   pages:
     - path: /SalesEnablement/sales
 - title: Technical Labs
   pages:
-    - title: Introduction - ARM Lab
+    - title: Introduction - ARM
       path: /Labs/Introduction
-    - title: ARM Lab Environment
+    - title: Lab Environment
       path: /Labs/env
     - title: Lab 1 - Apps & Infra dependencies
       path: /Labs/Lab1      
@@ -22,9 +19,9 @@
       path: /Labs/Summary
     - title: 
       path: /Labs/space
-    - title: Introduction - FinOps Lab
+    - title: Introduction FinOps
       path: /Labs/Introduction-finops
-    - title: FinOps Lab Environment
+    - title: Lab Environment
       path: /Labs/env-finops
     - title: Lab 1 - Visualizing Cloud
       path: /Labs/Lab1-finops      

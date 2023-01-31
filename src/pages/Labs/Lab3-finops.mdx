@@ -6,7 +6,9 @@ export const Title = () => (
   </span>
 );
 ---
-
+<InlineNotification kind="error">
+Reminder: Do NOT click the Execute Actions button!
+</InlineNotification>
 
 ## 3.1	Analyze a rightsizing recommendation
 Compute resources are often the biggest line item on a cloud bill – they can total as much as 50% of the total bill. Hence, it makes sense that the bank starts their FinOps initiative by optimizing their compute resources.
@@ -53,7 +55,8 @@ The current instance [m5.4xlarge EC2] is highly underutilized based on the 30-da
 To understand how Turbonomic derived the on-demand price, on-demand monthly cost, and savings, let’s use Amazon’s AWS EC2 On-Demand Pricing Calculator.
 
 #### Step 3.1.5
-Click here to get to Amazon’s AWS EC2 On-Demand Pricing Calculator (this will open in a new tab). Fill out the On-Demand Plans for Amazon EC2 form with the following data:
+Click [here](https://aws.amazon.com/ec2/pricing/on-demand/)
+to be directed to Amazon’s AWS EC2 On-Demand Pricing Calculator (will open in a new tab). Fill out the On-Demand Plans for Amazon EC2 form with the following data:
 
  1. Location Type: AWS Region
  2. Region: US East (N. Virginia)

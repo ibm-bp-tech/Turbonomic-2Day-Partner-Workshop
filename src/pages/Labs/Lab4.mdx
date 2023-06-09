@@ -1,65 +1,125 @@
 ---
+title: Lab4
+---
 export const Title = () => (
   <span>
     Lab 4 - Automating Actions <br />
   </span>
-);
+)
+;
+
+
+## What are policies in Turbonomic?
+
+Policies set business rules to control how Turbonomic analyzes resource allocation, how it displays resource status, and how it recommends or executes actions. Turbonomic includes two fundamental types of policies:
+### •	Placement Policies
+To optimize your environment, Turbonomic recommends actions to place workloads such as applications, containers, or VMs on their providers. Turbonomic can recommend these actions or execute them automatically.
+### •	Automation Policies
+As Turbonomic gathers metrics, it compares the metric values against specified constraints and capacity settings to determine whether a metric exhibits a problem and what actions to recommend or execute to avoid a problem. Turbonomic uses Automation Policies to guide its analysis and resulting actions.
+
+## Lab - Explore existing policies
+
+### As a reminder, please ensure that you are logged in with an Administrator user. If you haven't logged out of your demo users, you will not have the necessary permissions to run through the labs.
+
+1. Navigate to "Settings", then "Policies". In this page, you will see a list of all existing policies.
+
+![policy1](img/policies/policy1.png)
+
+2. From the list to the left, select "Defaults". This will show a list of all system default policies. 
+
+**Tip:** These default policies remain effective unless a user creates a policy affecting the same resources but with different criteria. User-defined policy overrides the default policy.
+
+![defaultpolicy](img/policies/defaultpolicy.png)
+
+3. Scroll down in default policy list and click on "Storage Defaults". Now notice that this policy sets the "Resize" action acceptance set to recommend. This will result in all resize actions generated for storage to be set to recommend only and be unable to execute within Turbonomic. 
+
+![storage1](img/policies/storage1.png)
+
+4. Navigate to "Virtual Machine Defaults" policy from the default policies list. You can see that all cloud scaling actions are set to "Manual" which allows them to be accepted and executed (assuming there are no prerequisits for them).
+
+![vm1](img/policies/vm1.png)
+
+## Lab - Create an Automation Policy
+In this lab, you will create an automation policy to define how you'd like Turbonomic to treat actions as they appear. Keep in mind, user-defined policies will override system default policies that affect the same entity.
+
+### Move Virtual Machines
+
+1. Navigate to "Policies" from "Settings". Then click on "New Automation Policy" on the top right side of the window.
+
+![auto1](img/policies/auto1.png)
+
+2. Scroll down the list and click on "Virtual Machine". Once you do the Policy Editor window will appear.
+
+![vmmove1](img/policies/vmmove1.png)
+
+3. In the Policy editor, give your policy a unique name like **vm_move_YourInitials**. Then under "Scope" click on "Select group of virtual machines". This will specify which group of VMs will be affected by this policy.
+
+![vmmove2](img/policies/vmmove2.png)
+
+4. In the search bar type "vsphere" and from the list, select the group named "vsphere-DC20-DC01_VM" and click on "Select".
+
+![vmmove3](img/policies/vmmove3.png)
+
+5. In the policy editor, then click on "Automation and Orchestration" then click on "Add Action". This section will allow you to select which actions are accepted and how. Fill out the information as shown below. The automation piece is applied when you select "Automatic" for "Action Acceptance". You can leave the orchestration settings as default then click "Submit"
+
+![vmmove4](img/policies/vmmove4.png)
+
+6. In your policy editor, double check for entered information and the click on "Save Policy". You may recieve a message saying it may take 10 minutes for the policy to become effective, click "Yes" to proceed.
+
+![vmmove5](img/policies/vmmove5.png)
+
+7. To check if your policy is created try searching for your policy's name in the list. you can make changes and edit it as necessary from here as well.
+
+![vmmove6](img/policies/vmmove6.png)
+
+
 ---
-<InlineNotification kind="error">
-Reminder: Do NOT click the submit button!
-</InlineNotification>
 
-## 4.1 - Automate the execution of actions
+### Scale Cloud Volume
 
-Though Turbonomic allows you to initiate an action natively from the platform with the click of a button, it is a best practice to automate the execution of these actions.
+In this section you will create an automation policy to automate scaling of cloud volume actions. Let's automate volumes whose scaling actions are non-disruptive, reversible and offer cost savings (because they offer the lowest risk and highest reward).
 
-We will now define a policy that enables you to automate the platform-derived actions without having to jump into multiple tools. This significantly enhances operator productivity.
+1. Navigate to "Policies" from "Settings". Then click on "New Automation Policy" on the top right side of the window. Select "Volumes" from the list.
 
-#### Step 4.1.1
- - Log out and log back in using the following credentials:
- - Admin Username: (Provided by Instructor)
- - Admin Password: (Provided by Instructor)
+![scale1](img/policies/scale1.png)
 
-#### Step 4.1.2
- - Click SETTINGS (1) and select Policies (2).
+2. Because our focus is scaling cloud volumes, select cloud from the list on the left, then select "akachkaev-test-action_group" form the list and click on the submit button.
 
-![Lab4](images/4.1.2.jpg)
+![scale2](img/policies/scale2.png)
 
-#### Step 4.1.3
- - Click NEW AUTOMATION POLICY.
+3. This will open up the "Configure Volume Policy" page. 
 
-<InlineNotification>
-If you do not see the NEW AUTOMATION POLICY button, it means that the system is currently running in a restricted read-only mode. In this case, skip Actions 4.1.4-4.1.6 and proceed.
+    ![scale3](img/policies/scale3.png)
 
-NOTE: Actions 4.1.4-4.1.6 represent how an automation policy can be configured and put into effect.
-</InlineNotification>
+    1- Give your policy a unique name like "cloud_scale_YourInitials". 
+    
+    2- Notice how the scope is set to the group of volumes you selected. 
+    
+    3- We want this policy to be effective always and immediately so we will leave the "Policy Schedule" empty.
+   
+    4- Toggle the "Volume Scaling Actions" on to enable these actions.
+   
+    5- Since we want to automate the lowest risk actions, use the pencil icon next to "Non-Disrubtive Revesible Scaling" to edit the "Action Acceptance" and set it to "Automatic". Leave the Orchestration settings as default. click on "Submit" to go back to the policy editor.
 
-![Lab4](images/4.1.3.jpg)
- 
-#### Step 4.1.4
- - Select Container Pod.
+    ![scale4](img/policies/scale4.png)
 
-![Lab4](images/4.1.4.jpg)
+    6- Scroll down and ensure "Disruptive Reversible Scaling" is set to "manual" since you'd like to plan for the downtime resulting from this action before taking it.
+    
+    7- Set "Disruptive Irreversible Scaling" to "Recommend". 
+   
+    8- Since our goal is to maximize savings, choose that option.
+    
+    9- Allow generation of "Volume Deletion Actions" by toggling it to green and set its action acceptance to "Manual". 
 
-#### Step 4.1.5
- - Give the policy a custom NAME. Then, expand AUTOMATION AND ORCHESTRATION (2) and click ADD ACTION (3) to define how an action is accepted
+    ![scale5](img/policies/scale5.png)
 
-![Lab4](images/4.1.5.jpg)
- 
-#### Step 4.1.6
- - Fill out the Automation and Orchestration panel:
- - Set ACTION TYPE to Move (1).
- - Set ACTION GENERATION to Generate Actions (2).
- - Set ACTION ACCEPTANCE to Automatic (3).
+    10- Scroll further down until you see a graph of and its settings below it. They are set to defaults in Turbonomic but if you wanted to change that this section is where you do it for the specified group of resources. The chart in this page will show the effect of changing each setting.
+        - **Aggressiveness** - Defines what is the percentile you want the utilization of the resource to be before taking and action. Leave it at P95 for this lab.
+        - **Min Observation Period** - This Lets Turbonomic know what the shortest amount of time is it needs to monitor a resource before generating actions to optimize it. Leave this setting as "None".
+        - **Max Observation Period** - This settings tells Turbonomic how long we want it to monitor the resource before generating an action. Leave this setting as "30 days".
+    
+    11- You can leave the rest of the settings in the policy editor as is and then click on "Save and Apply". If a window pops up, click "Apply".
 
-<InlineNotification>
- IMPORTANT NOTE: Do NOT click Submit.
-</InlineNotification>
+    ![scale6](img/policies/scale6.png)
 
-![Lab4](images/4.1.6.jpg)
-
-Once the automation policy is saved, it will go into effect. All configured actions will now be executed automatically.
-
-The main benefit and best practice of Turbonomic is to execute the platform-derived actions automatically. The underlying goal is to reduce or remove human intervention and leverage automation to maintain application performance and improve operational efficiency.
-
-Although we have demonstrated how actions can be initiated automatically from Turbonomic, typically IT organizations manually execute actions until they are confident that the actions are trustworthy. As the organization’s level of comfort matures over time, actions are executed in an increasingly automated fashion.
+    

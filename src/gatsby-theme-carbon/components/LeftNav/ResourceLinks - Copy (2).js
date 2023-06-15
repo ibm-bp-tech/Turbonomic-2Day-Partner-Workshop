@@ -15,17 +15,9 @@ const links = [
     title: 'IBM AIOps Site',
     href: 'https://www.ibm.com/cloud/aiops',
   },
- {
-    title: 'PTEG',
+  {
+    title: 'PTEG - Partner Enablement',
     href: 'https://ibm.seismic.com/Link/Content/DCGdFfFmRb3Rb8TRTHhHPXjbCDWj',
-   },
- {
-    title: 'PTEG - Turbonomic',
-    href: 'https://ibm.seismic.com/Link/Content/DCGVQ3p7FQbGj8CC9GgP32HP6GPj',
-  },
- {
-    title: 'Turbonomic Demo Easel',
-    href: 'https://mydemoeasel.com/VNLL/EFSLEGI.html',
   },
 ];
 

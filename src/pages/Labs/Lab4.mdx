@@ -42,38 +42,6 @@ As Turbonomic gathers metrics, it compares the metric values against specified c
 ## Lab - Create an Automation Policy
 In this lab, you will create an automation policy to define how you'd like Turbonomic to treat actions as they appear. Keep in mind, user-defined policies will override system default policies that affect the same entity.
 
-### Move Virtual Machines
-
-1. Navigate to "Policies" from "Settings". Then click on "New Automation Policy" on the top right side of the window.
-
-![auto1](img/policies/auto1.png)
-
-2. Scroll down the list and click on "Virtual Machine". Once you do the Policy Editor window will appear.
-
-![vmmove1](img/policies/vmmove1.png)
-
-3. In the Policy editor, give your policy a unique name like **vm_move_YourInitials**. Then under "Scope" click on "Select group of virtual machines". This will specify which group of VMs will be affected by this policy.
-
-![vmmove2](img/policies/vmmove2.png)
-
-4. In the search bar type "vsphere" and from the list, select the group named "vsphere-DC20-DC01_VM" and click on "Select".
-
-![vmmove3](img/policies/vmmove3.png)
-
-5. In the policy editor, then click on "Automation and Orchestration" then click on "Add Action". This section will allow you to select which actions are accepted and how. Fill out the information as shown below. The automation piece is applied when you select "Automatic" for "Action Acceptance". You can leave the orchestration settings as default then click "Submit"
-
-![vmmove4](img/policies/vmmove4.png)
-
-6. In your policy editor, double check for entered information and the click on "Save Policy". You may recieve a message saying it may take 10 minutes for the policy to become effective, click "Yes" to proceed.
-
-![vmmove5](img/policies/vmmove5.png)
-
-7. To check if your policy is created try searching for your policy's name in the list. you can make changes and edit it as necessary from here as well.
-
-![vmmove6](img/policies/vmmove6.png)
-
-
----
 
 ### Scale Cloud Volume
 

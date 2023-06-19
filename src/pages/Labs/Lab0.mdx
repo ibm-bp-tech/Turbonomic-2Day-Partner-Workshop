@@ -3,7 +3,7 @@ title: Lab0
 ---
 export const Title = () => (
   <span>
-    Lab 0 - Add Instana Target <br />
+    Lab 0 - Add Instana and Kubernetes Target <br />
   </span>
 )
 ;
@@ -15,7 +15,7 @@ A target is a service that performs management in your virtual environment. Turb
 **Tip:** Turbonomic must be on a network with access to the specific services you want to set up as targets. (but we have this part covered for this session)
 
 
-## Adding Instana Target
+## [1]. Adding Instana Target
 
 Turbonomic supports the discovery of applications managed by APM tools - in this case, the Instana platform. Turbonomic includes the discovered information about these applications in its calculations for environmental health.
 
@@ -86,7 +86,7 @@ Now that you have added a new target, allow 15 minutes for Turbonomic to run dis
 
 ![apps](img/addtargets/apps.png)
 
-## Adding Kubernetes Target
+## [2]. Adding Kubernetes Target
 
 The Turbonomic platform gathers information from Kubernetes/OpenShift environment through **Kubeturbo** that is deployed into the Kubernetes/OpenShift cluster that you want to manage. Kubeturbo will run a single pod deployment with the following resources:
 
@@ -96,24 +96,6 @@ The Turbonomic platform gathers information from Kubernetes/OpenShift environmen
 - ConfigMap which contains the connection to the Turbonomic server
 - Deployment for Kubeturbo pod.
 
-![arch](img/addtargets/kubeturbo_arch.jpeg)
-
-### Requirements
-
-Kubeturbo can be installed on Kubernetes version 1.11 or higher or OpenShift release 3.11 and higher on any x86_64, Power or LinuxONE architecture. The other requirements are
-
-- Turbonomic Server URL
-- Turbonomic Server credentials for Kubeturbo to communicate with. Typically it can be Site Administrator or Administrator role
-- Access to registry `icr.io/cpopen/turbonomic/kubeturbo:<version>` (Version 8.7.5 or higher) or [Docker hub or docker.io] for versions 8.7.4 or lower
-- Ports 443 and 10250 
-  
-### Types of Deployment of Kubeturbo
-
-Kubeturbo can be deployed in three ways. They are:
-
-- Deploy resources via yaml (resource files)
-- Operator (OperatorHub for OpeNShift)
-- Helm chart
 
 More information is available on the [Kubeturbo Wiki](https://github.com/turbonomic/kubeturbo/wiki). In this tutorial, you will be installing Kubeturbo via helm chart.
 
@@ -190,14 +172,14 @@ The Kubeturbo is installed on the provided Kubernetes cluster. In this section, 
   cocuser@kmaster:~/kubeturbo/deploy$ 
   ```
 
-- Now run this command to install kubeturbo. **Make sure to change the password for restAPIConfig.opsManagerPassword and set it to the one provided in the Credentials file. Be sure to remove any quotation marks ''. You can use a text editor for this. To access the text editor navigate to "Activities" from your bastion vm and open click on the nine dots to open all apps. then select text editor.**
+- Next run the following install command to install kubeturbo:
   
   ```
   helm install  kubeturbo  ./kubeturbo --namespace turbo \
        --set serverMeta.turboServer=https://10.0.0.1 \
        --set serverMeta.version=8.8.2 --set image.tag=8.8.2 \
        --set restAPIConfig.opsManagerUserName=kubeserviceaccount \
-       --set restAPIConfig.opsManagerPassword='Refer to Turbo-PoT-Credentials' \
+       --set restAPIConfig.opsManagerPassword='CoC#Rulz!' \
        --set targetConfig.targetName=kubecluster1
   ```
 

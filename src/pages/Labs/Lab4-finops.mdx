@@ -3,7 +3,7 @@ title: Lab4-finops
 ---
 export const Title = () => (
   <span>
-    Lab 4 - Optimizing storage resources <br />
+    FinOps 4 - Optimizing storage resources <br />
   </span>
 )
 ;
@@ -93,4 +93,4 @@ We can immediately see the various scale options, along with the bank’s projec
 
 We can see that this particular volume is underutilized from both IOPS (1) and throughput (2) perspectives. Based on the actual utilization pattern of this workload, Turbonomic’s analytics show that this workload does not need a GP3 and that the performance requirements of the workload can be met with a cheaper ST1 storage tier. This workload does not need the provisioned 3,000 IOPS and can get by with a much lower 130 IOPS (Second Screenshot). We therefore see that the storage capacity was overprovisioned, at a cost that was 8-9% too high. Turbonomic’s analytics engine computes the projected cost savings (3 - First screenshot).
 
-By analyzing and understanding the data access patterns of their workloads, the bank can make cost-efficient trade-offs about their storage choices, including the storage type, capacity, and IOPS.
+By analyzing and understanding the data access patterns of their workloads, the bank can make cost-efficient trade-offs about their storage choices, including the storage type, capacity, and IOPS. Click "Execute Action"

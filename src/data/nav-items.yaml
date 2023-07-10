@@ -10,37 +10,37 @@
       path: /Labs/env
     - title: 
       path: /Labs/space
-    - title: A. Establish Integration
+    - title: Targeting Lab - Introduction
       path: /Labs/Introduction-config
-    - title: Lab A.1 - Add Instana Target
+    - title: Add Instana Target
       path: /Labs/Lab1-config
-    - title: Lab A.2 - Add K8s Target
+    - title: Add K8s Target
       path: /Labs/Lab2-config  
     - title: 
       path: /Labs/space 
-    - title: B. ARM Lab - Introduction
+    - title: ARM Lab - Introduction
       path: /Labs/Introduction
-    - title: Lab B.1 - Apps & Infra dependencies
+    - title: ARM 1 - Apps & Infra dependencies
       path: /Labs/Lab1      
-    - title: Lab B.2 - RobotShop App
+    - title: ARM 2 - RobotShop App
       path: /Labs/Lab2
-    - title: Lab B.3 - Optimization Recommendations
+    - title: ARM 3 - Optimization Recommendations
       path: /Labs/Lab3
-    - title: Lab B.4 - Automating Actions
+    - title: ARM 4 - Automating Actions
       path: /Labs/Lab4
     - title: Summary - ARM
       path: /Labs/Summary
     - title: 
       path: /Labs/space
-    - title: C. FinOps Lab - Introduction
+    - title: FinOps Lab - Introduction
       path: /Labs/Introduction-finops
-    - title: Lab C.1 - Visualizing Cloud
+    - title: FinOps 1 - Visualizing Cloud
       path: /Labs/Lab1-finops      
-    - title: Lab C.2 - Savings Recommendations 
+    - title: Finops 2 - Savings Recommendations 
       path: /Labs/Lab2-finops
-    - title: Lab C.3 - Rightsizing Compute
+    - title: FinOps 3 - Rightsizing Compute
       path: /Labs/Lab3-finops
-    - title: Lab C.4 - Optimizing Storage
+    - title: FinOps 4 - Optimizing Storage
       path: /Labs/Lab4-finops
     - title: Summary - FinOps
       path: /Labs/Summary-finops

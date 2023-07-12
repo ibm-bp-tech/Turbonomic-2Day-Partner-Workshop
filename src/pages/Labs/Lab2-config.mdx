@@ -18,6 +18,12 @@ export const Title = () => (
 
 </InlineNotification>
 
+<InlineNotification kind= "warning">
+
+Be wary of code blocks below that are mentioned as results/output. These blocks are references, and should not be copied and pasted into the bastion terminal.
+
+</InlineNotification>
+
 ## Adding Kubernetes Target
 
 The Turbonomic platform gathers information from Kubernetes/OpenShift environment through **Kubeturbo** that is deployed into the Kubernetes/OpenShift cluster that you want to manage. Kubeturbo will run a single pod deployment with the following resources:
@@ -60,11 +66,18 @@ The various steps to create a service account are:
 
 ### Install Kubeturbo on the Kubernetes cluster
 
+<InlineNotification>
+
+For Copy/Paste, debugging, and command-line help, refer to the tips at the bottom of this page.
+
+</InlineNotification>
+
 The Kubeturbo is installed on the provided Kubernetes cluster. In this section, you will SSH into your Kubernetes cluster from your bastion VM. **So all commands will be executed from your bastion VM's Terminal window.**
 
 - Open a Terminal window in your bastion VM. Navigate to "Activities" from the top left and click on Terminal.
 
 - SSH to server kmaster (IPAddress: 10.0.0.3) using **user-id: cocuser**, **password: Refer to "Turbo-PoT-Credentials" on you bastion VM** and **ssh port: 2022**
+
   
   ```
   ssh -p 2022 cocuser@10.0.0.3
@@ -118,12 +131,6 @@ The Kubeturbo is installed on the provided Kubernetes cluster. In this section, 
   REVISION: 1
   TEST SUITE: None
   ```
-
-<InlineNotification>
-
-For Copy/Paste, debugging, and command-line help, refer to the tips at the bottom of this page.
-
-</InlineNotification>
 
 - Now validate that the kubeturbo that is installed is showing up in the Turbonomic console. 
   - Go to Settings -> Target Configuration.

@@ -10,7 +10,7 @@
       path: /Labs/env
     - title: 
       path: /Labs/space
-    - title: Targeting Lab - Introduction
+    - title: Integration Lab - Introduction
       path: /Labs/Introduction-config
     - title: Add Instana Target
       path: /Labs/Lab1-config

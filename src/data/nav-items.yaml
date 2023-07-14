@@ -22,7 +22,7 @@
       path: /Labs/Introduction
     - title: ARM 1 - Apps & Infra dependencies
       path: /Labs/Lab1      
-    - title: ARM 2 - RobotShop App
+    - title: ARM 2 - Quote of the Day App
       path: /Labs/Lab2
     - title: ARM 3 - Optimization Recommendations
       path: /Labs/Lab3

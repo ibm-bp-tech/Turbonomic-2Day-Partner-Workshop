@@ -13,18 +13,18 @@ export const Title = () => (
 Let’s explore one of the performance recommendations in more detail.
 
 1. On the Action Details page, if the details are not already expanded, click Expand Details.
-![Lab3](images/Robo_Action4.png)
+![Lab3](images/qotd5.png)
 
-2. Review the performance action details. Point out the recommendation to upsize the virtual CPU limit from 600 mCores to 700 mCores.
+2. Review the performance action details. Point out the recommendation to upsize the virtual CPU limit from 150 mCores to 250 mCores.
 
 <InlineNotification>
 Since this is a dynamic system, the metrics displayed on your screen may not necessarily reflect the exact numbers in the screenshot.
 </InlineNotification>
 
-![Lab3](images/Robo_Action5.png)
+![Lab3](images/qotd6.png)
  
-CPU throttling directly impacts the response time of a service and therefore user experience. Turbonomic observes and tracks CPU throttling. In the case of RobotShop, the response time latency of the payment service can adversely impact the ecommerce checkout experience.
-Given the rate of throttling being observed, Turbonomic recommends increasing the CPU limit from 600 mCores to 700 mCores. Proactively alleviating CPU congestion pressures by providing these analytics-driven recommendations helps keep the application in the desired state where it meets its defined service-level objectives (SLOs).
+CPU throttling directly impacts the response time of a service and therefore user experience. Turbonomic observes and tracks CPU throttling. In the case of Quote of the Day, the response time latency of the quote service can severely impact the delivery of a quote.
+Given the rate of throttling being observed, Turbonomic recommends increasing the CPU limit from 150 mCores to 250 mCores. Proactively alleviating CPU congestion pressures by providing these analytics-driven recommendations helps keep the application in the desired state where it meets its defined service-level objectives (SLOs).
 
 3. The state of this action is, "Action can be accepted and executed immediately." Click on the "Execute Action" button to make the action changes.
-![Lab3](images/Robo_Action7.png)
+![Lab3](images/qotd7.png)

@@ -10,7 +10,35 @@ export const Title = () => (
 
 # Add Targets
 
-A target is a service that performs management in your virtual environment. Turbonomic uses targets to monitor workload and execute actions in your environment. Turbonomic communicates with the target via the management protocol it exposes — The REST API, SMI-S, XML, or some other management transport. Turbonomic uses this communication to discover the managed entities, monitor resource utilization, and execute actions.
+For Turbonomic to perform intelligent workload balancing, it collects raw data from its 
+targets like:
+- APM Solutions (Instana, Dynatrace, New Relic, Cisco AppDynamics), 
+- Hypervisors (Microsoft Hyper-V, VMware vCenter), 
+- Public Cloud (Amazon AWS, Google Cloud Platform (GCP), Microsoft Azure 
+Service),
+- Cloud Native Targets (OpenShift, Pivotal Kubernetes Service, Amazon Elastic, 
+Kubernetes Service (EKS), Azure Kubernetes Service (AKS), Cisco Container 
+Platform (CCP), Google Kubernetes Engine (GKE) 
+- ...etc. 
+
+Turbonomic polls its targets at 10-minute intervals to collect the latest data samples. It 
+then uses these 10-minute data points for analysis and to display data in the GUI. 
+Turbonomic also uses targets to execute actions in your environment to further optimize
+the underlying infrastructure resources. Turbonomic communicates with the target via 
+the management protocol it exposes like REST API, SMI-S, XML, or some other 
+management transport.<br />
+In this lab you will establish integration between Turbonomic and two targets:
+
+1. Instana APM<br />
+Turbonomic supports discovery of applications that are managed by the Instana 
+platform. Turbonomic. includes the discovered information about these 
+applications in its calculations for environment health.
+2. Kubernetes<br />
+With Cloud Native targets, Turbonomic discovers entities related to container 
+platforms in your environment. Discovery can also stitch the container cluster 
+entities together with managed applications. For example, discovery can show 
+the full application stack if your container environment includes applications 
+managed by technology like Instana APM. 
 
 **Tip:** Turbonomic must be on a network with access to the specific services you want to set up as targets. (but we have this part covered for this session)
 

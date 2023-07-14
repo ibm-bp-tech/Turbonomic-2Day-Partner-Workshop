@@ -3,35 +3,28 @@ title: Lab2
 ---
 export const Title = () => (
   <span>
-    ARM 2 - Drilling into the RobotShop application <br />
+    ARM 2 - Drilling into the Quote of the Day application <br />
   </span>
 )
 ;
 
-Examine RobotShop resource dependencies
-Now that we have a broad understanding of the global view, let’s examine the health of the RobotShop application. This is called “scoping.”
+Examine Quote of the Day resource dependencies
+Now that we have a broad understanding of the global view, let’s examine the health of the Quote of the Day application. This is called “scoping.”
 
-1. Click the RobotShop link to scope to RobotShop. *If RobotShop is not visible, click "Show All"
-![Lab2](images/Robo_Action0.png)
+1. Click the Quote of the Day link to scope to Quote of the Day. *If Quote of the Day is not visible, click "Show All"
+![Lab2](images/qotd1.png)
 
-2. Point out that we are scoped to RobotShop, with data coming from Instana.
-![Lab2](images/Robo_Action1.png)
+2. Point out that we are scoped to Quote of the Day, with data coming from Instana.
+![Lab2](images/qotd2.png)
 
-The supply chain can ingest data from a number of APM (Application Performance Monitoring) tools. In this case, the supply chain is scoped to RobotShop, and the charts provide a quick view of RobotShop’s overall operating health.
+The supply chain can ingest data from a number of APM (Application Performance Monitoring) tools. In this case, the supply chain is scoped to Quote of the Day, and the charts provide a quick view of Quote of the Day’s overall operating health.
 
-Since RobotShop is a Kubernetes-based cloud native application, all the entities in the supply chain are specific to a container infrastructure.
+Since Quote of the Day is a Kubernetes-based cloud native application, all the entities in the supply chain are specific to a container infrastructure.
 
 3. On the Pending Actions chart, click SHOW ALL.
 
-![Lab2](images/Robo_Action2.png)
+![Lab2](images/qotd3.png)
 
- <InlineNotification>
-
-- If the Actions Panel displays "No Data", Turbo may need a few more minutes to populate fully. Try clicking on any part of the supply chain that isn't at full health (the circle is partially red). If the entire supply chain is fully green, validate all previous steps have been completed, call over an instructor if it continues to persist.
-
-![Lab2](images/Robo_Action8.png)
-
-</InlineNotification>
 
 The Turbonomic engine performs an ongoing (real-time) holistic analysis of the environment, generating resource optimization recommendations (and associated actions) that you can follow to resolve and avoid emerging problems.
 
@@ -41,13 +34,14 @@ Performance: Container resize UP actions are typically performance-centric actio
 
 Efficiency: Container resize DOWN actions are typically efficiency-centric actions that are pointing to a resource optimization opportunity, likely a consequence of resource over- provisioning.
 
-4. On the Action Center panel, under RESIZE, find the "shipping" workload controller and select "DETAILS"
+4. On the Action Center panel, under RESIZE, find the "qotd-quote" workload controller and select "DETAILS"
 
 <InlineNotification>
 
-- If the "shipping" workload controller is not visible, call over an instructor to assist
+If the "qotd-quote" controller does not have an action, expand the details of an action that does appear. If there are no actions, call over an instructor to assist.
 
 </InlineNotification>
 
-![Lab2](images/Robo_Action3.png)
+
+![Lab2](images/qotd4.png)
 

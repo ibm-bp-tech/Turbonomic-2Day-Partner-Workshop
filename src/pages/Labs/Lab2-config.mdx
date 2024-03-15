@@ -115,7 +115,7 @@ The Kubeturbo is installed on the provided Kubernetes cluster. In this section, 
   ```
   helm install  kubeturbo  ./kubeturbo --namespace turbo \
        --set serverMeta.turboServer=https://10.0.0.1 \
-       --set serverMeta.version=8.8.2 --set image.tag=8.8.2 \
+       --set serverMeta.version=8.10.5 --set image.tag=8.10.5 \
        --set restAPIConfig.opsManagerUserName=kubeserviceaccount \
        --set restAPIConfig.opsManagerPassword='CoC#Rulz!' \
        --set targetConfig.targetName=kubecluster1
@@ -173,7 +173,7 @@ helm delete kubeturbo -n turbo
 ```
 helm upgrade  kubeturbo  ./kubeturbo --namespace turbo \
     --set serverMeta.turboServer=https://10.0.0.1 \
-    --set serverMeta.version=8.8.2 --set image.tag=8.8.2 \
+    --set serverMeta.version=8.10.5 --set image.tag=8.10.5 \
     --set restAPIConfig.opsManagerUserName=kubeserviceaccount \
     --set restAPIConfig.opsManagerPassword=myPassw0rd \
     --set targetConfig.targetName=kubecluster1
@@ -216,7 +216,7 @@ Check the logs to see if kubeturbo communicates with the Turbonomic Server.
   I0331 14:35:10.407785       1 client_websocket_transport.go:306] WebSocket transport layer is ready.
   I0331 14:35:10.407799       1 remote_mediation_client.go:92] Start sdk client protocol ........
   I0331 14:35:10.407814       1 sdk_client_protocol.go:35] Starting protocol negotiation ....
-  I0331 14:35:10.411017       1 sdk_client_protocol.go:118] Protocol negotiation result: ACCEPTED. Protocol version "8.8.2" is allowed to interact with server.
+  I0331 14:35:10.411017       1 sdk_client_protocol.go:118] Protocol negotiation result: ACCEPTED. Protocol version "8.10.5" is allowed to interact with server.
   ```
 **Tip:** to break out of the logs loop you can do a ctrl+c.
 

@@ -74,6 +74,10 @@ For Copy/Paste, debugging, and command-line help, refer to the tips at the botto
 
 The Kubeturbo is installed on the provided Kubernetes cluster. In this section, you will SSH into your Kubernetes cluster from your bastion VM. **So all commands will be executed from your bastion VM's Terminal window.**
 
+- Find the Turbonomic Server Version from the console: The version here is **8.11.6**, as shown in the picture.  
+  
+  ![turbo_version](img/addtargets/turbosrv_version.png)
+
 - Open a Terminal window in your bastion VM. Navigate to "Activities" from the top left and click on Terminal.
 
 - SSH to server kmaster (IPAddress: 10.0.0.3) using **user-id: cocuser**, **password: Refer to "Turbo-PoT-Credentials" on you bastion VM** and **ssh port: 2022**
@@ -111,11 +115,11 @@ The Kubeturbo is installed on the provided Kubernetes cluster. In this section, 
   cocuser@kmaster:~/kubeturbo/deploy$ 
   ```
 
-  Next run the following install command to install kubeturbo:
+  Next run the following install command to install kubeturbo (ensure the version and tag is same as deployed Turbo version:
   ```
   helm install  kubeturbo  ./kubeturbo --namespace turbo \
        --set serverMeta.turboServer=https://10.0.0.1 \
-       --set serverMeta.version=8.10.5 --set image.tag=8.10.5 \
+       --set serverMeta.version=8.11.6 --set image.tag=8.11.6 \
        --set restAPIConfig.opsManagerUserName=kubeserviceaccount \
        --set restAPIConfig.opsManagerPassword='CoC#Rulz!' \
        --set targetConfig.targetName=kubecluster1
@@ -173,7 +177,7 @@ helm delete kubeturbo -n turbo
 ```
 helm upgrade  kubeturbo  ./kubeturbo --namespace turbo \
     --set serverMeta.turboServer=https://10.0.0.1 \
-    --set serverMeta.version=8.10.5 --set image.tag=8.10.5 \
+    --set serverMeta.version=8.11.6 --set image.tag=8.11.6 \
     --set restAPIConfig.opsManagerUserName=kubeserviceaccount \
     --set restAPIConfig.opsManagerPassword=myPassw0rd \
     --set targetConfig.targetName=kubecluster1
@@ -216,7 +220,7 @@ Check the logs to see if kubeturbo communicates with the Turbonomic Server.
   I0331 14:35:10.407785       1 client_websocket_transport.go:306] WebSocket transport layer is ready.
   I0331 14:35:10.407799       1 remote_mediation_client.go:92] Start sdk client protocol ........
   I0331 14:35:10.407814       1 sdk_client_protocol.go:35] Starting protocol negotiation ....
-  I0331 14:35:10.411017       1 sdk_client_protocol.go:118] Protocol negotiation result: ACCEPTED. Protocol version "8.10.5" is allowed to interact with server.
+  I0331 14:35:10.411017       1 sdk_client_protocol.go:118] Protocol negotiation result: ACCEPTED. Protocol version "8.11.6" is allowed to interact with server.
   ```
 **Tip:** to break out of the logs loop you can do a ctrl+c.
 

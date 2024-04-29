@@ -1,0 +1,27 @@
+---
+title: Exercise
+---
+export const Title = () => (
+  <span>
+    Do It Yourself (Exercises) <br />
+  </span>
+)
+;
+
+## Exercise 1
+
+1. Create a static group named "qotd" for Quote of the day business application.
+2. Create a Business application automation policy named "qotd" for the newly created group. 
+3. Enable response time SLO for response time > 100ms (You may adjust the response time based on the actual response time of the Qotd business application in your environment) and save the policy.
+4. Observe the impact of the policy after some time, if business application response time is greater than specified SLO, you should see SLO voilation in the Turbo UI. 
+
+## Exercise 2
+    
+1. Create a static group named "qotd-wc" for Workload controller and include "qotd-rating" and "qotd-pdf".
+2. Create new Workload Controller automation policy named "qotd-wcpolicy" for the newly created group.
+3. Automation policy should be for action type "VCPU Limit resize up" and recommend only to avoid manual/automatic action execution.
+4. After some time when policy is in effect, you should not be able to execute these actions for the selected group of workload controllers.
+
+Notice that the newly created policies apear under the "User Defined Automation Policies" in the Policy Management settings.
+
+    

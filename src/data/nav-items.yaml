@@ -4,36 +4,40 @@
 - title: Introduction to Turbonomic
   pages:
     - path: /SalesEnablement/sales
-- title: Technical Labs
+
+  hasDivider: true
+- title: Lab Environment
   pages:
-    - title: Lab Environment
-      path: /Labs/env
-    - title: 
-      path: /Labs/space
+    - path: /Labs/env
+
+- title: Labs - Integration
+  pages: 
     - title: Integration Lab - Introduction
       path: /Labs/Introduction-config
     - title: Add Instana Target
       path: /Labs/Lab1-config
     - title: Add K8s Target
       path: /Labs/Lab2-config  
-    - title: 
-      path: /Labs/space 
+
+- title: Labs - ARM
+  pages:
     - title: ARM Lab - Introduction
-      path: /Labs/Introduction
+      path: /Labs/Introduction-arm
     - title: ARM 1 - Apps & Infra dependencies
-      path: /Labs/Lab1      
+      path: /Labs/Lab1-arm     
     - title: ARM 2 - Quote of the Day App
-      path: /Labs/Lab2
+      path: /Labs/Lab2-arm
     - title: ARM 3 - Optimization Recommendations
-      path: /Labs/Lab3
+      path: /Labs/Lab3-arm
     - title: ARM 4 - Automating Actions
-      path: /Labs/Lab4
+      path: /Labs/Lab4-arm
     - title: Do It Yourself (Exercises)
       path: /Labs/Exercise
     - title: Summary - ARM
       path: /Labs/Summary
-    - title: 
-      path: /Labs/space
+
+- title: Labs - Finops
+  pages:
     - title: FinOps Lab - Introduction
       path: /Labs/Introduction-finops
     - title: FinOps 1 - Visualizing Cloud
